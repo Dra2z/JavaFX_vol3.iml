@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
+import java.sql.ResultSet;
 
 public class DataBaseConnector extends Configs {
         Connection dbConnection;
@@ -12,7 +12,7 @@ public class DataBaseConnector extends Configs {
         public Connection getDbConnection() throws ClassNotFoundException, SQLException {
             String connectionString = "jdbc:mysql://" + dbHost + ":" + dbPort + "/" + dbName;
 
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
             dbConnection = DriverManager.getConnection(connectionString, dbUser, dbPass);
 
@@ -41,6 +41,28 @@ public class DataBaseConnector extends Configs {
             }
         }
 
+        public ResultSet getUsers (Users users) {
+            ResultSet rSet = null;
+
+            String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " + Const.USER_LOGIN + "=? AND " +
+                    Const.USER_PASSWORD + "=?";
+
+            try {
+                PreparedStatement prStatement = getDbConnection().prepareStatement(select);
+                prStatement.setString(1, users.getLoginName());
+                prStatement.setString(2, users.getPasswordUser());
+
+                rSet = prStatement.executeQuery();
+
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            return rSet;
+
+        }
 
 }
 

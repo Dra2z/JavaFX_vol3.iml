@@ -15,6 +15,8 @@ public class Users {
         this.emailUser = emailUser;
     }
 
+    public Users() {}
+
     public String getFirstName() {
         return firstName;
     }
