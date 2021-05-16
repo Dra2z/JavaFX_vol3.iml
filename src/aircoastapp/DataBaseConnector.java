@@ -20,8 +20,10 @@ public class DataBaseConnector extends Configs {
         }
 
         public void signUpUser (Users users) {
-            String insert = "INSERT IN" + Const.USER_TABLE + "(" + Const.USER_FIRSTNAME + Const.USER_LASTNAME + Const.USER_LOGIN +
-                    Const.USER_PASSWORD + Const.USER_EMAIL + ")" + "VALUES(?,?,?,?,?)";
+
+            //String insert = "INSERT INTO " + Const.USER_TABLE + " (" + Const.USER_FIRSTNAME + Const.USER_LASTNAME + Const.USER_LOGIN +
+              //      Const.USER_PASSWORD + Const.USER_EMAIL + ") " + "VALUES(?,?,?,?,?)";
+            String insert = "INSERT INTO  usersaircoast (firstName, lastName, loginName, passwordUser, emailUser) VALUES (?, ?, ?, ?, ?)";
 
 
 

@@ -26,20 +26,23 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="0f146eef-5594-47e0-9f3f-3e274dd0f034">
-        <schema name="aircoast" object-types="view, table" />
+        <schema name="aircoast" object-types="table, view, procedure, function, constraint, index, column, dataset trigger" />
+        <schema name="mysql" object-types="table, view, procedure, function, constraint, index, column, dataset trigger" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="0f146eef-5594-47e0-9f3f-3e274dd0f034">
-      <console name="aircoast" type="STANDARD" schema="aircoast" session="Main" />
+      <console name="aircoast" type="STANDARD" schema="aircoast" session="Session 1" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="0f146eef-5594-47e0-9f3f-3e274dd0f034" />
+    <connection id="0f146eef-5594-47e0-9f3f-3e274dd0f034">
+      <session name="Session 1" id="8e14eb02-9a28-4dc3-9455-f2ee5b951c44" />
+    </connection>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="0f146eef-5594-47e0-9f3f-3e274dd0f034" dataset="aircoast.usersaircoast" active-filter-id="">
@@ -53,6 +56,9 @@
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.FileConnectionMappingManager">
+    <mapping file-url="file://$PROJECT_DIR$/sql/aircoast.sql" connection-id="0f146eef-5594-47e0-9f3f-3e274dd0f034" session-id="MAIN" current-schema="aircoast" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -84,7 +90,7 @@
           <driver-source value="EXTERNAL" />
           <driver-library value="C:\Program Files (x86)\MySQL\Connector J 8.0" />
           <driver value="com.mysql.cj.jdbc.Driver" />
-          <url value="jdbc:mysql://localhost:3306/aircoast" />
+          <url value="jdbc:mysql://localhost:3306" />
           <type value="USER_PASSWORD" />
           <user value="Drazz" />
           <deprecated-pwd value="dmFsZXQyYXdwMQ==" />
